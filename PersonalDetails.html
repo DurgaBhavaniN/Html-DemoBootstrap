@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Personal Details</title>
+    <script type="text/javascript">
+        function validate() {
+            if (document.myform.Name.value !== "" ||document.myform.Name.value == "") {
+                //regular expression to patterns of input
+                var pat = /[a-z]{2,30}/;
+                if (pat.test(document.myform.Name.value) == false) {
+                    alert("Please provide your name!");
+                    document.myform.Name.focus();
+                    return false;
+                }
+            }
+            if (document.myform.Home_town.value == "-1") {
+                alert("Please provide your home town!");
+                return false;
+            }
+            if (document.myform.Password.value == "") {
+                alert("Please provide your password!");
+                document.myform.Password.focus();
+                return false;
+            }
+            return true;
+        }
+            </script>
+            </head>
+
+
+<body>
+    <h1>Personal Details</h1>
+    <form name="myform" onsubmit="return (validate());">
+        <table border="1" align="center">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="Name" title="Enter ur name"/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="Password" /></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="male" />Male
+                <input type="radio" name="female" />Female</td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" name="age" />
+
+                </td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea rows="5" name="address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td><input type="checkbox" name="1" />C
+                <input type="checkbox" name="2" />C++
+                <input type="checkbox" name="3" />Java
+                <input type="checkbox" name="4" />Sap</td>
+            </tr>
+            <tr>
+                <td>Home Town</td>
+                <td><select name="Home_town">
+                    <option value="-1" selected>[select]</option>
+                    <option value="1">INDIA</option>
+                    <option value="2">USA</option> </select></td>
+            </tr>
+            <br />
+            <tr>
+               <td> <input type="submit" value="submit" />register me</td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>

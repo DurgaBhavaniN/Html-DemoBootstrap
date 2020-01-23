@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>JavaScript Demo</title>
+</head>
+<body>
+    <h1>FE Demo</h1>
+    <script>
+        function OuterFunction() {
+            var outerVarible = 100;
+            function InnerFunction() {
+                outerVarible++;
+                alert(outerVarible);
+            }
+            return InnerFunction;
+        }
+        var innerFunc = OuterFunction();
+        innerFunc();
+        innerFunc();
+        innerFunc();
+    </script>
+   
+</body>
+</html>
